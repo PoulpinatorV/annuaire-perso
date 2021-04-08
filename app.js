@@ -20,7 +20,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(bodyParser.json());
 
 app.post('/api/games',(req, res, next) => {
     const game = new Game({
