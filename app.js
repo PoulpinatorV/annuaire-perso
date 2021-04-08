@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.arguments((res, res) => {
+app.arguments((req, res) => {
     res.json({ message : 'Votre requête a réussi !' });
 })
 
