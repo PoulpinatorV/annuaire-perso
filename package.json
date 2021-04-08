@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PoulpinatorV/annuaire-perso/issues"
   },
-  "homepage": "https://github.com/PoulpinatorV/annuaire-perso#readme"
+  "homepage": "https://github.com/PoulpinatorV/annuaire-perso#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
