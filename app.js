@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Game = require('./models/game');
 const gameRoutes = require('./routes/game');
+const userRoutes = rquire('./routes/user');
 
 mongoose.connect('mongodb+srv://poulpi:coucou@cluster0.j10yt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     .then(() => {
@@ -25,5 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api/game', gameRoutes);
+
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
