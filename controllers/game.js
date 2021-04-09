@@ -1,10 +1,10 @@
 const Game = require('../models/game');
 
-exports.createGame = (req,res,next) => {
+exports.createGame = (req, res, next) => {
     const game = new Game({
         title: req.body.title,
         description: req.body.description,
-        year: req.body.description,
+        year: req.body.year,
         imageUrl: req.body.imageUrl
     });
     game.save().then(
@@ -20,7 +20,7 @@ exports.createGame = (req,res,next) => {
             });
         }
     );
-}
+};
 
 exports.getOneGame = (req,res,next) => {
     Game.findOne({
@@ -36,9 +36,10 @@ exports.getOneGame = (req,res,next) => {
             });
         }
     );
-}
+};
 
 exports.modifyOneGame = (req, res, next) => {
+    console.log(req);
     let gameData = {};  
     if(req.body.title) gameData.title=req.body.title;
     if(req.body.description) gameData.description=req.body.description;
@@ -55,7 +56,7 @@ exports.modifyOneGame = (req, res, next) => {
             });
         }
     );
-}
+};
 
 exports.deleteOneGame = (req, res, next) =>{
     Game.deleteOne({_id: req.params.id}).then(
@@ -71,7 +72,7 @@ exports.deleteOneGame = (req, res, next) =>{
             });
         }
     );
-}
+};
 
 exports.getAllGames = (req, res, next) =>{
     Game.find().then(
@@ -85,4 +86,4 @@ exports.getAllGames = (req, res, next) =>{
             });
         }
     );
-}
+};

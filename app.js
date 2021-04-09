@@ -21,6 +21,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/games', gameRoutes);
+app.use('/api/game', gameRoutes);
 
 module.exports = app;
